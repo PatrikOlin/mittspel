@@ -17,7 +17,7 @@ public class NumberGames {
 
 		boolean runGameSelect = true;
 		while (runGameSelect) {
-			System.out.println("Hej! Välkommen till nummergissningsspelet!\nVad vill du spela? [1. Binary search/2. Random guess/3. Avsluta]");
+			System.out.println("Hej! Välkommen till nummergissningsspelet!\nVad vill du spela? [1. Binary search/2. Random guess/3. Exit]");
 			String gameChoice = keyboardInput.next().toLowerCase();
 
 			if(gameChoice.contains("b") || gameChoice.contains("1")){

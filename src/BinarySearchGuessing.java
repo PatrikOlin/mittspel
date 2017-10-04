@@ -22,10 +22,24 @@ public class BinarySearchGuessing {
 	public boolean PlayBinarySearchGuessingGame() {
 
 		System.out.println("Tänk på ett heltal i ett intervall.");
-		System.out.println("Ange var intervallet slutar och startar: ");
+		
+		// Kollar så att inputen är giltig och bara innehåller siffror.
+		boolean inputValidator = false;
+		while(!inputValidator) {
+			try {
+				System.out.println("Ange var intervallet börjar: ");
+				low = Integer.parseInt(NumberGames.keyboardInput.next());
 
-		this.low = NumberGames.keyboardInput.nextInt();
-		this.high = NumberGames.keyboardInput.nextInt();
+				System.out.println("Ange var intervallet slutar: ");
+				high= Integer.parseInt(NumberGames.keyboardInput.next());
+
+				inputValidator = true;
+			}
+			catch (NumberFormatException ex) {
+				System.out.println("Bara siffror, tack!\n");
+			}
+		}
+		
 		this.numOfGuesses = 0;
 
 		System.out.println("Du har valt intervallet " + low + "-" + high);
