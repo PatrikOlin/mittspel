@@ -1,6 +1,6 @@
 /*
  * 
- *  Namn: Patrik Olin
+ *  Namn: Jonas ALekstrand
  *  Datum 2017-10-02
  * 	Kurs: Java SE, Iftac
  *  Laboration 1
@@ -21,13 +21,13 @@ public class BinarySearchGuessing {
 
 	public boolean PlayBinarySearchGuessingGame() {
 
-		System.out.println("Tänk på ett heltal i ett intervall.");
+		System.out.println("Tï¿½nk pï¿½ ett heltal i ett intervall.");
 		
-		// Kollar så att inputen är giltig och bara innehåller siffror.
+		// Kollar sï¿½ att inputen ï¿½r giltig och bara innehï¿½ller siffror.
 		boolean inputValidator = false;
 		while(!inputValidator) {
 			try {
-				System.out.println("Ange var intervallet börjar: ");
+				System.out.println("Ange var intervallet bï¿½rjar: ");
 				low = Integer.parseInt(NumberGames.keyboardInput.next());
 
 				System.out.println("Ange var intervallet slutar: ");
@@ -50,32 +50,32 @@ public class BinarySearchGuessing {
 		while(!winCondition) { 
 
 			int guess = (high + low) / 2; 
-			System.out.println("Är talet du tänker på " + guess + "? [Ja/Högre/Lägre]");
+			System.out.println("ï¿½r talet du tï¿½nker pï¿½ " + guess + "? [Ja/Hï¿½gre/Lï¿½gre]");
 			numOfGuesses++; 
 			String playerInput = NumberGames.keyboardInput.next().toLowerCase();
 
-			if (playerInput.equals("högre")) { 
+			if (playerInput.equals("hï¿½gre")) { 
 				low = guess;
 				guess = (high + low) / 2;
 
-			} else if (playerInput.equals("lägre")) {
+			} else if (playerInput.equals("lï¿½gre")) {
 				high = guess;
 				guess = (high + low) / 2;
 
 			} else if (playerInput.equals("ja")) {
-				System.out.println("Det tog mig " + numOfGuesses + " försök att gissa rätt!");
+				System.out.println("Det tog mig " + numOfGuesses + " fï¿½rsï¿½k att gissa rï¿½tt!");
 				System.out.println("Det borde tagit mig " + maxGuesses + " gissningar.");
 				winCondition = true;
 				System.out.println("Vill du spela igen? [Ja/Nej]");
 				playerInput = NumberGames.keyboardInput.next().toLowerCase();
 
 				if(playerInput.equals("nej")) {
-					System.out.println("Ok, tack för idag!\n");
+					System.out.println("Ok, tack fï¿½r idag!\n");
 					return continuePlaying = false;
 				}
 
 			} else {
-				System.out.println("Felaktig input, ange 'Ja', 'Högre' eller 'Lägre'");
+				System.out.println("Felaktig input, ange 'Ja', 'Hï¿½gre' eller 'Lï¿½gre'");
 			}
 		}
 		return continuePlaying;
