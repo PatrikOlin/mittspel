@@ -1,41 +1,40 @@
 /*
  * 
- *  Namn: Patrik
+ *  Namn: Patrik Olin
  *  Datum 2017-10-02
  * 	Kurs: Java SE, Iftac
+ *  Laboration 1
  * 
  */
 
-import java.util.HashSet;
-import java.util.Random;
 import java.util.Scanner;
-import java.util.Set;
 
 public class NumberGames {
 
+	public static final Scanner keyboardInput = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 
 		boolean runGameSelect = true;
 		while (runGameSelect) {
-			Scanner keyboardInput = new Scanner(System.in);
-			System.out.println("Hej! Välkommen till nummergissningsspelet!\nVad vill du spela? [Binary search/Random guess/Exit]");
+			System.out.println("Hej! Välkommen till nummergissningsspelet!\nVad vill du spela? [1. Binary search/2. Random guess/3. Avsluta]");
 			String gameChoice = keyboardInput.next().toLowerCase();
 
-			if(gameChoice.contains("b")){
+			if(gameChoice.contains("b") || gameChoice.contains("1")){
 				BinarySearchGuessing binaryGame = new BinarySearchGuessing();
 				while (binaryGame.isContinuePlaying()) {
 					binaryGame.PlayBinarySearchGuessingGame();
 				}
-			} if (gameChoice.contains("r")) {
+			}else if (gameChoice.contains("r") || gameChoice.contains("2")) {
 				RandomGuessingGame randomGame = new RandomGuessingGame();
 				while (randomGame.isContinuePlaying()) {
 					randomGame.PlayRandomGuessingGame();
 				}
-			} else if(gameChoice.contains("x")) {
+			} else if(gameChoice.contains("x") || gameChoice.contains("3")) {
 				System.out.println("Hej då!");
 				runGameSelect = false;
-				keyboardInput.close();
 			}
 		}
+		keyboardInput.close();
 	}
 }
