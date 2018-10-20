@@ -21,13 +21,13 @@ public class BinarySearchGuessing {
 
 	public boolean PlayBinarySearchGuessingGame() {
 
-		System.out.println("T�nk p� ett heltal i ett intervall.");
+		System.out.println("Tänk på ett heltal i ett intervall.");
 		
 		// Kollar s� att inputen �r giltig och bara inneh�ller siffror.
 		boolean inputValidator = false;
 		while(!inputValidator) {
 			try {
-				System.out.println("Ange var intervallet b�rjar: ");
+				System.out.println("Ange var intervallet börjar: ");
 				low = Integer.parseInt(NumberGames.keyboardInput.next());
 
 				System.out.println("Ange var intervallet slutar: ");
@@ -50,7 +50,7 @@ public class BinarySearchGuessing {
 		while(!winCondition) { 
 
 			int guess = (high + low) / 2; 
-			System.out.println("�r talet du t�nker p� " + guess + "? [Ja/H�gre/L�gre]");
+			System.out.println("Är talet du tänker på " + guess + "? [Ja/H�gre/L�gre]");
 			numOfGuesses++; 
 			String playerInput = NumberGames.keyboardInput.next().toLowerCase();
 
